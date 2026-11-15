@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>edward team: таргетированная реклама и ИИ-администраторы</title>
+<meta name="description" content="ИП «М.Ю.» (edward team), Караганда. Таргетированная реклама и внедрение ИИ-администраторов для бизнеса: чат-боты для WhatsApp, Instagram и Telegram.">
+<meta property="og:title" content="edward team">
+<meta property="og:description" content="Таргетированная реклама и внедрение ИИ-администраторов для бизнеса">
+<meta property="og:image" content="og.jpg">
+<meta name="theme-color" content="#0E0E10">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0E0E10; --bg-2: #17171A; --line: #26262B;
+    --ink: #FFFFFF; --ink-2: #B9B9C0; --ink-3: #7C7C85;
+    --red: #E5233B;
+    --display: "Unbounded", system-ui, sans-serif;
+    --text: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--text); font-size: 17px; line-height: 1.6;
+         -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  header { position: sticky; top: 0; z-index: 10; background: rgba(14,14,16,.86); backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: -.02em; text-decoration: none; }
+  .logo i { color: var(--red); font-style: normal; }
+  nav { display: flex; gap: 22px; font-weight: 600; font-size: 15px; }
+  nav a { text-decoration: none; color: var(--ink-2); }
+  nav a:hover { color: var(--ink); }
+  @media (max-width: 640px) { nav .hide-sm { display: none; } }
+
+  .hero { padding: 96px 0 72px; position: relative; overflow: hidden; }
+  .hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 6vw, 62px); line-height: 1.02;
+             letter-spacing: -.035em; margin: 0 0 22px; max-width: 900px; }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero p { color: var(--ink-2); font-size: clamp(17px, 2.2vw, 20px); max-width: 640px; margin: 0 0 34px; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; font-weight: 700;
+           font-size: 14px; padding: 7px 14px; border-radius: 999px; margin-bottom: 26px; transform: rotate(-3deg); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: 999px;
+         font-weight: 700; text-decoration: none; font-size: 16px; }
+  .btn.primary { background: var(--ink); color: var(--bg); }
+  .btn.ghost { border: 1.5px solid var(--line); color: var(--ink); }
+  .btn:hover { transform: translateY(-1px); }
+
+  section { padding: 72px 0; border-top: 1px solid var(--line); }
+  section h2 { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 4vw, 40px); letter-spacing: -.02em;
+               margin: 0 0 36px; }
+  section h2 i { color: var(--red); font-style: normal; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--bg-2); border: 1px solid var(--line); border-radius: 22px; padding: 28px; }
+  .card .n { font-family: var(--display); font-weight: 800; color: var(--red); font-size: 15px; margin-bottom: 14px; }
+  .card h3 { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.2; margin: 0 0 12px; letter-spacing: -.01em; }
+  .card p, .card li { color: var(--ink-2); margin: 0; }
+  .card ul { margin: 12px 0 0; padding-left: 18px; }
+  .card li { margin: 4px 0; }
+
+  .steps { counter-reset: s; display: grid; gap: 12px; }
+  .step { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start; padding: 18px 0;
+          border-bottom: 1px solid var(--line); }
+  .step::before { counter-increment: s; content: "0" counter(s); font-family: var(--display); font-weight: 800;
+                  color: var(--red); font-size: 22px; }
+  .step b { display: block; font-size: 18px; margin-bottom: 2px; }
+  .step span { color: var(--ink-2); }
+
+  .contacts { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .contacts { grid-template-columns: 1fr; } }
+  dl { margin: 0; display: grid; gap: 14px; }
+  dt { color: var(--ink-3); font-size: 14px; font-weight: 600; }
+  dd { margin: 2px 0 0; font-weight: 600; }
+  dd a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  dd a:hover { border-color: var(--red); }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0 40px; color: var(--ink-3); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">edward team<i>.</i></a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a class="hide-sm" href="#how">Как работаем</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <span class="badge">♥ +99</span>
+      <h1>Реклама, которая приводит клиентов, и <em>ИИ‑администратор</em>, который им отвечает</h1>
+      <p>Настраиваем таргетированную рекламу в Instagram и Facebook и внедряем ИИ-администраторов:
+        чат-ботов, которые круглосуточно консультируют клиентов и принимают заказы в WhatsApp, Instagram и Telegram.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://instagram.com/edward.ads" target="_blank" rel="noopener">Написать в Instagram</a>
+        <a class="btn ghost" href="mailto:nirvanafan0@mail.ru">nirvanafan0@mail.ru</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Услуги<i>.</i></h2>
+      <div class="grid">
+        <div class="card">
+          <div class="n">01</div>
+          <h3>Таргетированная реклама</h3>
+          <p>Запуск и ведение рекламы в Instagram и Facebook через Meta Ads.</p>
+          <ul>
+            <li>анализ аудитории и конкурентов</li>
+            <li>креативы и тексты объявлений</li>
+            <li>настройка, тесты, оптимизация</li>
+            <li>отчёты по заявкам и стоимости клиента</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="n">02</div>
+          <h3>ИИ-администратор</h3>
+          <p>Чат-бот на базе искусственного интеллекта, который отвечает клиентам как живой сотрудник.</p>
+          <ul>
+            <li>WhatsApp, Instagram Direct, Telegram</li>
+            <li>консультации по ассортименту и ценам</li>
+            <li>приём заказов и заявок 24/7</li>
+            <li>передача менеджеру сложных вопросов</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="n">03</div>
+          <h3>Интеграции</h3>
+          <p>Связываем бота с вашими системами, чтобы заявки не терялись.</p>
+          <ul>
+            <li>каталог и цены из вашего сайта или приложения</li>
+            <li>уведомления менеджерам в Telegram</li>
+            <li>выгрузка заказов в Google Таблицы</li>
+            <li>мини-магазин с корзиной для клиентов</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>Как работаем<i>.</i></h2>
+      <div class="steps">
+        <div class="step"><div><b>Разбираем задачу</b><span>Изучаем ваш бизнес, клиентов и то, как сейчас приходят и обрабатываются заявки.</span></div></div>
+        <div class="step"><div><b>Предлагаем решение</b><span>Рекламная стратегия, сценарии бота, нужные интеграции и сроки.</span></div></div>
+        <div class="step"><div><b>Запускаем</b><span>Настраиваем рекламу и бота, подключаем к вашим каналам и обучаем ваших менеджеров.</span></div></div>
+        <div class="step"><div><b>Сопровождаем</b><span>Следим за результатами, улучшаем объявления и ответы бота.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap">
+      <h2>Контакты и реквизиты<i>.</i></h2>
+      <div class="contacts">
+        <div class="card">
+          <dl>
+            <div><dt>Телефон</dt><dd><a href="tel:+77472007020">+7 747 200 70 20</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:nirvanafan0@mail.ru">nirvanafan0@mail.ru</a></dd></div>
+            <div><dt>Instagram</dt><dd><a href="https://instagram.com/edward.ads" target="_blank" rel="noopener">@edward.ads</a></dd></div>
+          </dl>
+        </div>
+        <div class="card">
+          <dl>
+            <div><dt>Исполнитель</dt><dd>ИП «М.Ю.» в лице Огай Максима Юрьевича</dd></div>
+            <div><dt>Адрес</dt><dd>Казахстан, Карагандинская область, г. Караганда, ул. Лободы, 46/65</dd></div>
+            <div><dt>Бренд</dt><dd>edward team</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> ИП «М.Ю.» · edward team</span>
+    <a href="privacy.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
